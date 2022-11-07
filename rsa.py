@@ -141,15 +141,19 @@ def main():
         elif opt == "-g":
             gen_flag = True
             gen_bit_len = int(arg)
+            assert(gen_bit_len > 0)
         elif opt == "-e":
             encrypt_flag = True
             power = int(arg)
+            assert(power > 0)
         elif opt == "-d":
             decrypt_flag = True
             power = int(arg)
+            assert(power > 0)
         elif opt == "-n":
             modulo_flag = True
             modulo = int(arg)
+            assert(modulo > 0)
 
     if help_flag:
         usage()
