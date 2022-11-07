@@ -1,6 +1,8 @@
 # RSA加解密程序
 
-代码在https://github.com/YitaoYuan/rsa_lab
+代码在https://github.com/YitaoYuan/rsa_lab。
+
+查看帮助，使用`python3 rsa.py`或`python3 rsa.py {-h|--help}`。
 
 ## 生成密钥
 
