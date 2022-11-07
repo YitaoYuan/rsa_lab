@@ -17,11 +17,11 @@ def power_with_modulo(x, pw, mod):
         pw >>= 1
     return res
 
-def is_prime2(p):
-    for i in range(2, int(math.sqrt(p) + 1.01)):
-        if p % i == 0:
-            return False
-    return True
+# def is_prime2(p):
+#     for i in range(2, int(math.sqrt(p) + 1.01)):
+#         if p % i == 0:
+#             return False
+#     return True
 
 def miller_rabin_test(p, a):
     phi = p - 1
