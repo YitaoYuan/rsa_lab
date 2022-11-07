@@ -118,7 +118,18 @@ def gen_key(bit_len):
     print("q = {}".format(q))
     print("d = {}".format(d))
 
+def encrypt_or_decrypt(data, power, modulo):
+    split_data = []
+    while data:
+        split_data.append(data % (modulo-1) + 1) # [1, modulo-1]
+        data //= (modulo-1)
 
+    split_data = [power_with_modulo(x, power, modulo) for x in split_data]
+
+    data = 0
+    for x in split_data: # x is in [1, modulo-1]
+        data = data * (modulo-1) + (x - 1)
+    print(data)
 
 def usage():
     print("Usage: python3 rsa.py [-h|--help]                   Show this help.")
@@ -176,18 +187,7 @@ def main():
     elif encrypt_flag or decrypt_flag:
         data = int(args[0])
         assert(data > 0)
-
-        split_data = []
-        while data:
-            split_data.append(data % (modulo-1) + 1) # [1, modulo-1]
-            data //= (modulo-1)
-
-        split_data = [power_with_modulo(x, power, modulo) for x in split_data]
-
-        data = 0
-        for x in split_data: # x is in [1, modulo-1]
-            data = data * (modulo-1) + (x - 1)
-        print(data)
+        encrypt_or_decrypt(data, power, modulo)
     else:
         usage()
         
