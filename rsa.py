@@ -134,7 +134,7 @@ def encrypt_or_decrypt(data, power, modulo):
 def usage():
     print("Usage: python3 rsa.py [-h|--help]                   Show this help.")
     print("       python3 rsa.py -g <bit length>               Generate RSA keys.")
-    print("       python3 rsa.py {-e|-d} <int> -n <int> <int, plaintext or ciphertext>");
+    print("       python3 rsa.py {-e|-d} <int> -n <int> <int, plaintext or ciphertext>")
     print("                                                    Encrypt or decrypt.")
 
 def main():
